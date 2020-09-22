@@ -102,12 +102,12 @@
 		32B6086C251A561F00CF1000 /* Movies */ = {
 			isa = PBXGroup;
 			children = (
+				32B608A8251A5DB900CF1000 /* Models */,
+				32B608A9251A5DC600CF1000 /* Views */,
+				32B608AA251A5DCF00CF1000 /* Controllers */,
 				32B6086D251A561F00CF1000 /* AppDelegate.swift */,
 				32B6086F251A561F00CF1000 /* SceneDelegate.swift */,
-				32B60871251A561F00CF1000 /* ViewController.swift */,
-				32B60873251A561F00CF1000 /* Main.storyboard */,
 				32B60876251A562100CF1000 /* Assets.xcassets */,
-				32B60878251A562200CF1000 /* LaunchScreen.storyboard */,
 				32B6087B251A562200CF1000 /* Info.plist */,
 			);
 			path = Movies;
@@ -129,6 +129,30 @@
 				32B60891251A562200CF1000 /* Info.plist */,
 			);
 			path = MoviesUITests;
+			sourceTree = "<group>";
+		};
+		32B608A8251A5DB900CF1000 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		32B608A9251A5DC600CF1000 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				32B60873251A561F00CF1000 /* Main.storyboard */,
+				32B60878251A562200CF1000 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		32B608AA251A5DCF00CF1000 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				32B60871251A561F00CF1000 /* ViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -443,6 +467,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H442Z54DM5;
 				INFOPLIST_FILE = Movies/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -462,6 +487,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H442Z54DM5;
 				INFOPLIST_FILE = Movies/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
