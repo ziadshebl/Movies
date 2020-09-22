@@ -15,6 +15,7 @@
 		32B6087A251A562200CF1000 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32B60878251A562200CF1000 /* LaunchScreen.storyboard */; };
 		32B60885251A562200CF1000 /* MoviesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B60884251A562200CF1000 /* MoviesTests.swift */; };
 		32B60890251A562200CF1000 /* MoviesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B6088F251A562200CF1000 /* MoviesUITests.swift */; };
+		32B6089E251A564E00CF1000 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 32B6089D251A564E00CF1000 /* README */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		32B6088B251A562200CF1000 /* MoviesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoviesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		32B6088F251A562200CF1000 /* MoviesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesUITests.swift; sourceTree = "<group>"; };
 		32B60891251A562200CF1000 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32B6089D251A564E00CF1000 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		32B60861251A561F00CF1000 = {
 			isa = PBXGroup;
 			children = (
+				32B6089D251A564E00CF1000 /* README */,
 				32B6086C251A561F00CF1000 /* Movies */,
 				32B60883251A562200CF1000 /* MoviesTests */,
 				32B6088E251A562200CF1000 /* MoviesUITests */,
@@ -231,6 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32B6089E251A564E00CF1000 /* README in Resources */,
 				32B6087A251A562200CF1000 /* LaunchScreen.storyboard in Resources */,
 				32B60877251A562200CF1000 /* Assets.xcassets in Resources */,
 				32B60875251A561F00CF1000 /* Main.storyboard in Resources */,
