@@ -6,52 +6,54 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
-class AllMoviesViewController: UITableViewController {
+class AllMoviesViewController: UIViewController {
     
-    var allMoviesList: MovieList?
+    @IBOutlet var tableView: UITableView!
+    
+    var allMoviesList: BehaviorRelay<[Movie]> = BehaviorRelay(value: [])
+    let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.dataSource = self
+        
         tableView.register(UINib(nibName: K.MovieCellNibName, bundle: nil), forCellReuseIdentifier: K.MovieCellIdentifier)
         
         do {
             if let localData = self.readLocalFile(forName: K.MoviesJsonFile) {
-                allMoviesList = try JSONDecoder().decode(MovieList.self, from: localData)
+                let allMovies = try JSONDecoder().decode(MovieList.self, from: localData)
+                allMoviesList.accept(allMovies.movies)
+                setupCellConfiguration()
+                setupCellTapHandling()
             }
-        } catch{
+            
+        } catch {
             print(error)
         }
-        
     }
-    
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return allMoviesList?.movies.count ?? 0
-    }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if let movies = allMoviesList?.movies {
-            let cell = tableView.dequeueReusableCell(withIdentifier: K.MovieCellIdentifier, for: indexPath) as! MovieCell
-            cell.movieTitleLabel.text = movies[indexPath.row].title
-            cell.movieReleaseYear.text = String(movies[indexPath.row].year)
-            cell.adjustRatingStars(rating: movies[indexPath.row].rating)
-            
-            return cell
-        }
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.MovieCellIdentifier, for: indexPath) as! MovieCell
-        cell.movieTitleLabel.text = "No Movies Yet"
-        cell.movieReleaseYear.text = "-"
-        return cell
-            
-    }
-    
-    
 }
 
+//MARK: - Rx Setup
+private extension AllMoviesViewController {
+    
+    func setupCellConfiguration() {
+        allMoviesList.bind(to: tableView.rx.items( cellIdentifier: K.MovieCellIdentifier, cellType: MovieCell.self)) {
+            row, movie, cell in cell.configureWithMovie(movie: movie)
+        }.disposed(by: disposeBag)
+    }
+    
+    func setupCellTapHandling(){
+        tableView.rx.modelSelected(Movie.self).subscribe(onNext: {
+            [unowned self] movie in
 
+            if let selectedRowIndexPath = self.tableView.indexPathForSelectedRow {
+                self.tableView.deselectRow(at: selectedRowIndexPath, animated: true)
+            }
+        }).disposed(by: disposeBag)
+    }
+}
 
 //MARK: - A section responsible for data manipulation from JSON file
 extension AllMoviesViewController {

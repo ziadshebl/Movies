@@ -40,6 +40,15 @@ class MovieCell: UITableViewCell {
         }
         
     }
+    
+    
+    //A function to configure the cell
+    //Input: The movie to be displayed in the cell as Movie
+    func configureWithMovie(movie: Movie) {
+        movieTitleLabel.text = movie.title
+        movieReleaseYear.text = String(movie.year)
+        adjustRatingStars(rating: movie.rating)
+    }
 
     
 }
