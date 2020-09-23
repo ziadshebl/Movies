@@ -6,7 +6,11 @@
 //
 
 struct K {
-    static let cellNibName = "MovieCell"
-    static let cellIdentifier = "MovieReusableCell"
+    static let MovieCellNibName = "MovieCell"
+    static let MovieCellIdentifier = "MovieReusableCell"
+    static let MovieImagesCellNibName = "MovieImagesCell"
+    static let MovieImagesCellIdentifier = "MovieImagesReusableIdentifier"
+    static let MoviesJsonFile = "./movies"
+    
 
 }
