@@ -3,12 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		320D2814251CA06500F868BB /* Flickr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320D2813251CA06500F868BB /* Flickr.swift */; };
+		320D2824251CAE3900F868BB /* FlickrPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320D2823251CAE3900F868BB /* FlickrPhoto.swift */; };
+		327EA678251E339100D7B7B7 /* MovieImagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327EA676251E339100D7B7B7 /* MovieImagesCollectionViewCell.swift */; };
+		327EA679251E339100D7B7B7 /* MovieImagesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 327EA677251E339100D7B7B7 /* MovieImagesCollectionViewCell.xib */; };
 		3290A4A9251B72EC006C7F81 /* MovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3290A4A8251B72EC006C7F81 /* MovieList.swift */; };
 		3290A4BA251B8B83006C7F81 /* movies.json in Resources */ = {isa = PBXBuildFile; fileRef = 3290A4B9251B8B83006C7F81 /* movies.json */; };
+		3290A4D1251BC7EC006C7F81 /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3290A4D0251BC7EC006C7F81 /* MovieDetailsViewController.swift */; };
 		32B6086E251A561F00CF1000 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B6086D251A561F00CF1000 /* AppDelegate.swift */; };
 		32B60870251A561F00CF1000 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B6086F251A561F00CF1000 /* SceneDelegate.swift */; };
 		32B60872251A561F00CF1000 /* AllMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B60871251A561F00CF1000 /* AllMoviesViewController.swift */; };
@@ -21,8 +26,6 @@
 		32B608B0251A670100CF1000 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B608AE251A670100CF1000 /* MovieCell.swift */; };
 		32B608B1251A670100CF1000 /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32B608AF251A670100CF1000 /* MovieCell.xib */; };
 		32B608B9251A6E9200CF1000 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B608B8251A6E9200CF1000 /* Constants.swift */; };
-		32B608C2251A88C300CF1000 /* MovieImagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B608C0251A88C300CF1000 /* MovieImagesCell.swift */; };
-		32B608C3251A88C300CF1000 /* MovieImagesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32B608C1251A88C300CF1000 /* MovieImagesCell.xib */; };
 		32D3B2D2251B6FCA00B62005 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D3B2D1251B6FCA00B62005 /* Movie.swift */; };
 		9FB8DD06C94472ECD429DF62 /* Pods_MoviesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AAA1AD67FC03D22AF7D39A2 /* Pods_MoviesTests.framework */; };
 		B124C6E3FC75B76852A6B0F5 /* Pods_Movies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB8259043DFABC84F72E3981 /* Pods_Movies.framework */; };
@@ -49,8 +52,13 @@
 /* Begin PBXFileReference section */
 		1112243A3D14EBBF2CB07921 /* Pods-Movies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movies.release.xcconfig"; path = "Target Support Files/Pods-Movies/Pods-Movies.release.xcconfig"; sourceTree = "<group>"; };
 		27EDEE4A1A34BAC66050531F /* Pods-MoviesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoviesTests.release.xcconfig"; path = "Target Support Files/Pods-MoviesTests/Pods-MoviesTests.release.xcconfig"; sourceTree = "<group>"; };
+		320D2813251CA06500F868BB /* Flickr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Flickr.swift; path = Movies/Flickr.swift; sourceTree = SOURCE_ROOT; };
+		320D2823251CAE3900F868BB /* FlickrPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrPhoto.swift; sourceTree = "<group>"; };
+		327EA676251E339100D7B7B7 /* MovieImagesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieImagesCollectionViewCell.swift; sourceTree = "<group>"; };
+		327EA677251E339100D7B7B7 /* MovieImagesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieImagesCollectionViewCell.xib; sourceTree = "<group>"; };
 		3290A4A8251B72EC006C7F81 /* MovieList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieList.swift; sourceTree = "<group>"; };
 		3290A4B9251B8B83006C7F81 /* movies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = movies.json; sourceTree = "<group>"; };
+		3290A4D0251BC7EC006C7F81 /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
 		32B6086A251A561F00CF1000 /* Movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32B6086D251A561F00CF1000 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32B6086F251A561F00CF1000 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,8 +77,6 @@
 		32B608AE251A670100CF1000 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		32B608AF251A670100CF1000 /* MovieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCell.xib; sourceTree = "<group>"; };
 		32B608B8251A6E9200CF1000 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		32B608C0251A88C300CF1000 /* MovieImagesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieImagesCell.swift; sourceTree = "<group>"; };
-		32B608C1251A88C300CF1000 /* MovieImagesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieImagesCell.xib; sourceTree = "<group>"; };
 		32D3B2D1251B6FCA00B62005 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		5AAA1AD67FC03D22AF7D39A2 /* Pods_MoviesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoviesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88C8E898BA5F3740C65F3964 /* Pods_Movies_MoviesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Movies_MoviesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,6 +115,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		320D2812251CA02800F868BB /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				320D2813251CA06500F868BB /* Flickr.swift */,
+			);
+			name = Network;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		32B60861251A561F00CF1000 = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +150,7 @@
 		32B6086C251A561F00CF1000 /* Movies */ = {
 			isa = PBXGroup;
 			children = (
+				320D2812251CA02800F868BB /* Network */,
 				3290A4B9251B8B83006C7F81 /* movies.json */,
 				32B608A8251A5DB900CF1000 /* Models */,
 				32B608A9251A5DC600CF1000 /* Views */,
@@ -171,6 +187,7 @@
 			children = (
 				32D3B2D1251B6FCA00B62005 /* Movie.swift */,
 				3290A4A8251B72EC006C7F81 /* MovieList.swift */,
+				320D2823251CAE3900F868BB /* FlickrPhoto.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -182,8 +199,8 @@
 				32B60878251A562200CF1000 /* LaunchScreen.storyboard */,
 				32B608AE251A670100CF1000 /* MovieCell.swift */,
 				32B608AF251A670100CF1000 /* MovieCell.xib */,
-				32B608C0251A88C300CF1000 /* MovieImagesCell.swift */,
-				32B608C1251A88C300CF1000 /* MovieImagesCell.xib */,
+				327EA676251E339100D7B7B7 /* MovieImagesCollectionViewCell.swift */,
+				327EA677251E339100D7B7B7 /* MovieImagesCollectionViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -192,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				32B60871251A561F00CF1000 /* AllMoviesViewController.swift */,
+				3290A4D0251BC7EC006C7F81 /* MovieDetailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -216,7 +234,6 @@
 				BD39526C4A9D75DF3E65D4F0 /* Pods-MoviesTests.debug.xcconfig */,
 				27EDEE4A1A34BAC66050531F /* Pods-MoviesTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -328,11 +345,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32B608C3251A88C300CF1000 /* MovieImagesCell.xib in Resources */,
 				32B6089E251A564E00CF1000 /* README in Resources */,
 				32B6087A251A562200CF1000 /* LaunchScreen.storyboard in Resources */,
 				32B60877251A562200CF1000 /* Assets.xcassets in Resources */,
 				32B60875251A561F00CF1000 /* Main.storyboard in Resources */,
+				327EA679251E339100D7B7B7 /* MovieImagesCollectionViewCell.xib in Resources */,
 				3290A4BA251B8B83006C7F81 /* movies.json in Resources */,
 				32B608B1251A670100CF1000 /* MovieCell.xib in Resources */,
 			);
@@ -464,8 +481,11 @@
 			files = (
 				32D3B2D2251B6FCA00B62005 /* Movie.swift in Sources */,
 				32B608B9251A6E9200CF1000 /* Constants.swift in Sources */,
+				320D2814251CA06500F868BB /* Flickr.swift in Sources */,
+				3290A4D1251BC7EC006C7F81 /* MovieDetailsViewController.swift in Sources */,
+				320D2824251CAE3900F868BB /* FlickrPhoto.swift in Sources */,
 				32B60872251A561F00CF1000 /* AllMoviesViewController.swift in Sources */,
-				32B608C2251A88C300CF1000 /* MovieImagesCell.swift in Sources */,
+				327EA678251E339100D7B7B7 /* MovieImagesCollectionViewCell.swift in Sources */,
 				32B6086E251A561F00CF1000 /* AppDelegate.swift in Sources */,
 				32B608B0251A670100CF1000 /* MovieCell.swift in Sources */,
 				3290A4A9251B72EC006C7F81 /* MovieList.swift in Sources */,

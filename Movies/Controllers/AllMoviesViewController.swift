@@ -21,6 +21,7 @@ class AllMoviesViewController: UIViewController {
         
         tableView.register(UINib(nibName: K.MovieCellNibName, bundle: nil), forCellReuseIdentifier: K.MovieCellIdentifier)
         
+        //Reading the JSON file and filling the allMoviesList array with the movies
         do {
             if let localData = self.readLocalFile(forName: K.MoviesJsonFile) {
                 let allMovies = try JSONDecoder().decode(MovieList.self, from: localData)
@@ -38,19 +39,23 @@ class AllMoviesViewController: UIViewController {
 //MARK: - Rx Setup
 private extension AllMoviesViewController {
     
+    //Binding the table view to the allMoviesList array
     func setupCellConfiguration() {
         allMoviesList.bind(to: tableView.rx.items( cellIdentifier: K.MovieCellIdentifier, cellType: MovieCell.self)) {
             row, movie, cell in cell.configureWithMovie(movie: movie)
         }.disposed(by: disposeBag)
     }
     
+    //A function responsible for handling the tapping event of the cell by navigating to the details screen
     func setupCellTapHandling(){
         tableView.rx.modelSelected(Movie.self).subscribe(onNext: {
             [unowned self] movie in
 
+            performSegue(withIdentifier: K.GoToDetailsSegueIdentifier, sender: self)
             if let selectedRowIndexPath = self.tableView.indexPathForSelectedRow {
                 self.tableView.deselectRow(at: selectedRowIndexPath, animated: true)
             }
+        
         }).disposed(by: disposeBag)
     }
 }
@@ -70,6 +75,18 @@ extension AllMoviesViewController {
             print(error)
         }
         return nil
+    }
+}
+
+//MARK: - A section responsible for handling the segue
+extension AllMoviesViewController {
+    
+    //Preparing the next destination by passing the movie to be displayed
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destinationVC = segue.destination as? MovieDetailsViewController{
+            let indexPath = tableView.indexPathForSelectedRow!
+            destinationVC.movie = allMoviesList.value[indexPath.row]
+        }
     }
 }
 
