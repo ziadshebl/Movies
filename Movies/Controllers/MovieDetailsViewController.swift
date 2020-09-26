@@ -9,6 +9,7 @@ import UIKit
 import Moya
 import RxCocoa
 import RxSwift
+import RealmSwift
 
 class MovieDetailsViewController: UIViewController {
     
@@ -39,8 +40,8 @@ class MovieDetailsViewController: UIViewController {
         if let currentMovie = movie {
             movieTitleLabel.text = currentMovie.title
             movieReleaseYearLabel.text = String(currentMovie.year)
-            self.loadCast(cast: movie?.cast ?? ["Not Found"])
-            self.loadGenres(genres: movie?.genres ?? ["Not Found"])
+            self.loadCast(cast: movie?.cast ?? List<Cast>())
+            self.loadGenres(genres: movie?.genres ?? List<Genre>())
             self.adjustRatingStars(rating: movie?.rating ?? 0)
         }
         
@@ -52,21 +53,21 @@ class MovieDetailsViewController: UIViewController {
     
     
     //A function responsibel to load the cast names from the cast array into the cast label
-    func loadCast(cast: [String]) {
-        castLabel.text = "Cast: \(cast[0])"
+    func loadCast(cast: List<Cast>) {
+        castLabel.text = "Cast: \(cast[0].castMember)"
         cast.forEach { (member) in
-            if member != cast[0]{
-                castLabel.text = castLabel.text! + ", \(member)"
+            if member.castMember != cast[0].castMember{
+                castLabel.text = castLabel.text! + ", \(member.castMember)"
             }
         }
     }
     
     //A function responsibel to load the genres names from the genres array into the genres label
-    func loadGenres(genres: [String]) {
-        genresLabel.text = "Genres: \(genres[0])"
-        genres.forEach { (genre) in
-            if genre != genres[0]{
-                genresLabel.text = genresLabel.text! + ", \(genre)"
+    func loadGenres(genres: List<Genre>) {
+        genresLabel.text = "Genres: \(genres[0].genre)"
+        genres.forEach { (genreItem) in
+            if genreItem.genre != genres[0].genre{
+                genresLabel.text = genresLabel.text! + ", \(genreItem.genre)"
             }
         }
     }

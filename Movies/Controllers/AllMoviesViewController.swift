@@ -8,32 +8,87 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import RealmSwift
+
 
 class AllMoviesViewController: UIViewController {
     
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
+    
+   
+    let realm = try! Realm()
+    
+    //lazy var moviesList: Results<Movie>  = {self.realm.objects(Movie.self)} ()
+    
     
     var allMoviesList: BehaviorRelay<[Movie]> = BehaviorRelay(value: [])
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         
+        super.viewDidLoad()
         tableView.register(UINib(nibName: K.MovieCellNibName, bundle: nil), forCellReuseIdentifier: K.MovieCellIdentifier)
         
+        loadData()
+        setupCellConfiguration()
+        setupCellTapHandling()
+        
+        
+
+    }
+    
+    
+    //This function is responsible for deciding wether to load the data from the json file or the cached data and load it
+    func loadData (){
         //Reading the JSON file and filling the allMoviesList array with the movies
         do {
+            let moviesSaved = realm.objects(Movie.self)
+            if moviesSaved.count == 0 {
+                print("JSON Loaded")
             if let localData = self.readLocalFile(forName: K.MoviesJsonFile) {
                 let allMovies = try JSONDecoder().decode(MovieList.self, from: localData)
-                allMoviesList.accept(allMovies.movies)
-                setupCellConfiguration()
-                setupCellTapHandling()
+
+                allMovies.movies.forEach { (movie) in
+                    do {
+                        try self.realm.write {
+                            let newMovie = Movie()
+                            newMovie.title = movie.title
+                            newMovie.rating = movie.rating
+                            newMovie.year = movie.year
+                            movie.cast.forEach { (castMember) in
+                                let newCastMember = Cast()
+                                newCastMember.castMember = castMember
+                                newMovie.cast.append(newCastMember)
+                            }
+                            movie.genres.forEach { (genre) in
+                                let newGenre = Genre()
+                                newGenre.genre = genre
+                                newMovie.genres.append(newGenre)
+                            }
+                            realm.add(newMovie)
+                            var currentMovieList = allMoviesList.value
+                            currentMovieList.append(newMovie)
+                            allMoviesList.accept(currentMovieList)
+                        }
+                    }catch {
+                        print("Error", error)
+                    }
+                }
+           }
+            }else {
+                print("Cache Loaded")
+            moviesSaved.forEach { (movie) in
+                var currentMovies = allMoviesList.value
+                currentMovies.append(movie)
+                allMoviesList.accept(currentMovies)
             }
-            
+        }
         } catch {
             print(error)
         }
     }
+    
 }
 
 //MARK: - Rx Setup

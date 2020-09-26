@@ -8,5 +8,5 @@
 import Foundation
 
 struct MovieList: Decodable{
-    let movies: [Movie]
+    let movies: [MovieJSONObject]
 }
