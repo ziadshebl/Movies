@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		320D2814251CA06500F868BB /* Flickr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320D2813251CA06500F868BB /* Flickr.swift */; };
 		320D2824251CAE3900F868BB /* FlickrPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320D2823251CAE3900F868BB /* FlickrPhoto.swift */; };
+		322FD26A2520D1CB001D9246 /* ImageCacheType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322FD2692520D1CB001D9246 /* ImageCacheType.swift */; };
+		322FD26F2520D353001D9246 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322FD26E2520D353001D9246 /* ImageCache.swift */; };
+		322FD2742520DCA7001D9246 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322FD2732520DCA7001D9246 /* ImageLoader.swift */; };
 		327EA678251E339100D7B7B7 /* MovieImagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327EA676251E339100D7B7B7 /* MovieImagesCollectionViewCell.swift */; };
 		327EA679251E339100D7B7B7 /* MovieImagesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 327EA677251E339100D7B7B7 /* MovieImagesCollectionViewCell.xib */; };
 		3290A4A9251B72EC006C7F81 /* MovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3290A4A8251B72EC006C7F81 /* MovieList.swift */; };
@@ -54,6 +57,9 @@
 		27EDEE4A1A34BAC66050531F /* Pods-MoviesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoviesTests.release.xcconfig"; path = "Target Support Files/Pods-MoviesTests/Pods-MoviesTests.release.xcconfig"; sourceTree = "<group>"; };
 		320D2813251CA06500F868BB /* Flickr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Flickr.swift; path = Movies/Flickr.swift; sourceTree = SOURCE_ROOT; };
 		320D2823251CAE3900F868BB /* FlickrPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrPhoto.swift; sourceTree = "<group>"; };
+		322FD2692520D1CB001D9246 /* ImageCacheType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheType.swift; sourceTree = "<group>"; };
+		322FD26E2520D353001D9246 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		322FD2732520DCA7001D9246 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		327EA676251E339100D7B7B7 /* MovieImagesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieImagesCollectionViewCell.swift; sourceTree = "<group>"; };
 		327EA677251E339100D7B7B7 /* MovieImagesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieImagesCollectionViewCell.xib; sourceTree = "<group>"; };
 		3290A4A8251B72EC006C7F81 /* MovieList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieList.swift; sourceTree = "<group>"; };
@@ -188,6 +194,9 @@
 				32D3B2D1251B6FCA00B62005 /* Movie.swift */,
 				3290A4A8251B72EC006C7F81 /* MovieList.swift */,
 				320D2823251CAE3900F868BB /* FlickrPhoto.swift */,
+				322FD2692520D1CB001D9246 /* ImageCacheType.swift */,
+				322FD26E2520D353001D9246 /* ImageCache.swift */,
+				322FD2732520DCA7001D9246 /* ImageLoader.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -479,7 +488,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				322FD2742520DCA7001D9246 /* ImageLoader.swift in Sources */,
 				32D3B2D2251B6FCA00B62005 /* Movie.swift in Sources */,
+				322FD26F2520D353001D9246 /* ImageCache.swift in Sources */,
 				32B608B9251A6E9200CF1000 /* Constants.swift in Sources */,
 				320D2814251CA06500F868BB /* Flickr.swift in Sources */,
 				3290A4D1251BC7EC006C7F81 /* MovieDetailsViewController.swift in Sources */,
@@ -487,6 +498,7 @@
 				32B60872251A561F00CF1000 /* AllMoviesViewController.swift in Sources */,
 				327EA678251E339100D7B7B7 /* MovieImagesCollectionViewCell.swift in Sources */,
 				32B6086E251A561F00CF1000 /* AppDelegate.swift in Sources */,
+				322FD26A2520D1CB001D9246 /* ImageCacheType.swift in Sources */,
 				32B608B0251A670100CF1000 /* MovieCell.swift in Sources */,
 				3290A4A9251B72EC006C7F81 /* MovieList.swift in Sources */,
 				32B60870251A561F00CF1000 /* SceneDelegate.swift in Sources */,

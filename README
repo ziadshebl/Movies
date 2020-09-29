@@ -1,1 +1,52 @@
+
+///////////////////////INFORMATION////////////////////////
 Architecture Used: MVC
+Pods Used:
+- Moya
+- RealmSwift
+- RxCocoa
+- RxSwift
+
+
+
+
+
+///////////////////////MODELS////////////////////////
+The app has 9 Models
+1) MovieJSONObject: which is responsible for decoding the movie object from the json file
+
+2) Movie: which is a Realm Object containing all the data needed for the movie
+
+3) Cast: which is a Realm Object containing a string of a cast member
+
+4) Genre: which is a Realm Object containing a string of a genre
+
+5) MovieList: which is a decodable list of MovieJSONObject
+
+6) FlickrPhoto: which is an object contaning all the data needed from the flickr api to create a specific image url
+
+7) ImageCacheType: is a protocol to ensure that any class applying that protocol will have 5 main functions
+
+8) ImageCache: A class responsible for all the methods needed to cache and retrieve an image
+
+9) ImageLoader: A class responsible for providing a function that decide wether to load the image from the internet or from the cached data
+
+
+
+///////////////////////Views////////////////////////
+The app is divided into two views
+1) AllMoviesView: Displaying a list of movies
+2) MovieDetailsView: Displaying the details of a specific movie
+
+
+
+
+///////////////////////Controllers////////////////////////
+The app has two view controllers on for each view
+1) AllMoviesViewController:
+Responsible for loading the list of the movies from the Realm database; in case no movies was cached in the Realm database, it will load the data from the json file and cache it in the Realm Database
+
+2) MovieDetailsController:
+Responsible for loading the data of the movie from a Movie object and display it on the screen as well as calling a function to load the images from the flick api by creating a url from the response data of the flickr api
+
+
