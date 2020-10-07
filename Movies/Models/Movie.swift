@@ -24,7 +24,6 @@ class Movie: Object {
     var  cast = List<Cast>()
     var genres = List<Genre>()
     @objc dynamic var  rating = 0
-    
 }
 
 class Cast: Object, Codable {

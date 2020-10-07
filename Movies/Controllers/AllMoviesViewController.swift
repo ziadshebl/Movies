@@ -11,7 +11,6 @@ import RxSwift
 import RealmSwift
 
 class AllMoviesViewController: UIViewController {
-    
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
     
@@ -102,8 +101,8 @@ private extension AllMoviesViewController {
     //Binding the table view to the allMoviesList array
     func setupCellConfiguration() {
         allMoviesList.bind(to: tableView.rx.items( cellIdentifier: Constants.MovieCellIdentifier,
-            cellType: MovieCell.self))
-        { _, movie, cell in cell.configureWithMovie(movie: movie)
+            cellType: MovieCell.self)) { _, movie, cell in
+            cell.configureWithMovie(movie: movie)
         }.disposed(by: disposeBag)
     }
     
@@ -127,7 +126,7 @@ private extension AllMoviesViewController {
                 DispatchQueue.main.async {
                     let moviesFiltered = self.realm.objects(Movie.self)
                         .filter("title contains '\(self.searchBar.text ?? "")'")
-                        .sorted(byKeyPath: "rating", ascending:false)
+                        .sorted(byKeyPath: "rating", ascending: false)
                         .sorted(byKeyPath: "year", ascending: false)
                     
                     var moviesToShow: [Movie] = []
@@ -175,7 +174,7 @@ extension AllMoviesViewController {
             let jsonData = try String(contentsOfFile: bundlePath).data(using: .utf8) {
                 return jsonData
             }
-        }catch {
+        } catch {
             print(error)
         }
         return nil

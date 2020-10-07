@@ -12,7 +12,7 @@ import Combine
 final class ImageLoader {
     private let cache = ImageCache()
     //A function responsible for choosing either to load the image with a specific
-    //url from the internet or from the cached data
+    //url from the internet or from the cached data.
     //Input: The url of the image as URL
     func loadImage(from url: URL) -> AnyPublisher<UIImage?, Never> {
         if let image = cache.image(for: url) {

@@ -11,7 +11,6 @@ import UIKit
 final class ImageCache {
     private let lock = NSLock()
     private let config: Config
-    
     struct Config {
         let countLimit: Int
         let memoryLimit: Int
@@ -115,5 +114,3 @@ extension UIImage {
     }
     
 }
-
-

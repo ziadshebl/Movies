@@ -95,11 +95,12 @@ extension MovieDetailsViewController {
     
     //A function responsible for requesting the images from Flickr
     func fetchImages() {
-        provider.request(.search(movie?.title ?? "None")) {[] result in
+        provider.request(.search(movie?.title ?? "No Movies")) {[] result in
             switch result {
             case .success(let response):
                 do {
-                    let jsonResponse = try JSONSerialization.jsonObject(with: response.data, options: []) as? [String: Any]
+                    let jsonResponse = try JSONSerialization.jsonObject(with: response.data,
+                        options: []) as? [String: Any]
                     let photosInfo = jsonResponse?["photos"] as? [String: Any]
                     let photosArray = photosInfo?["photo"] as? [[String: Any]]
                     photosArray?.forEach({ (photoElement) in
@@ -142,6 +143,4 @@ extension MovieDetailsViewController: UICollectionViewDelegateFlowLayout {
         let cellWidth = (width - 10) / 2
         return CGSize(width: cellWidth, height: cellWidth / 0.6)
     }
-
 }
-

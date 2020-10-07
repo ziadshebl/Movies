@@ -1,9 +1,4 @@
-//
-//  Flickr.swift
-//  Movies
-//
-//  Created by kamal badawy on 9/24/20.
-//
+
 
 import Foundation
 import UIKit
