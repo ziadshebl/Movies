@@ -95,7 +95,7 @@ class AllMoviesViewController: UIViewController {
     
 }
 
-//MARK:- Rx Setup
+//MARK:- Rx Setup for the controller
 private extension AllMoviesViewController {
     
     //Binding the table view to the allMoviesList array
@@ -162,7 +162,7 @@ private extension AllMoviesViewController {
     }
 }
 
-//MARK:- A section responsible for data manipulation from JSON file
+//MARK:- A section responsible for data manipulation from JSON file readed
 extension AllMoviesViewController {
     
     //A function to read the resources from a specific json file with the name passed

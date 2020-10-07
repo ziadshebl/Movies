@@ -1,5 +1,4 @@
 
-
 import Foundation
 import UIKit
 import Moya
@@ -17,13 +16,13 @@ extension Flickr: TargetType {
   public var path: String {
     switch self {
         case .search:
-            return "/rest"
+        return "/rest"
     }
   }
   public var method: Moya.Method {
     switch self {
         case .search:
-            return .get
+        return .get
     }
   }
   public var sampleData: Data {
@@ -32,7 +31,6 @@ extension Flickr: TargetType {
   public var task: Task {
     switch self {
     case .search(let title):
-     
         return  .requestParameters(
           parameters: [
             "method": "flickr.photos.search",
@@ -59,4 +57,3 @@ extension Flickr: TargetType {
   }
   
 }
-

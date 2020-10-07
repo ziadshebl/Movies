@@ -26,7 +26,6 @@ class MovieDetailsViewController: UIViewController {
     @IBOutlet weak var movieRatingStarImage3: UIImageView!
     @IBOutlet weak var movieRatingStarImage4: UIImageView!
     @IBOutlet weak var movieRatingStarImage5: UIImageView!
-    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -90,7 +89,7 @@ class MovieDetailsViewController: UIViewController {
     }
 }
 
-//MARK:- A section to maniuplate the images from Flickr
+//MARK:- A section to maniuplate the images from Flickr API
 extension MovieDetailsViewController {
     
     //A function responsible for requesting the images from Flickr
@@ -125,7 +124,7 @@ extension MovieDetailsViewController {
     
 }
 
-//MARK:- Collection View Setup
+//MARK:- Collection View Setup for the controller
 extension MovieDetailsViewController: UICollectionViewDelegateFlowLayout {
     
     //Binding the collection view to the photos array

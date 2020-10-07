@@ -14,10 +14,8 @@ final class ImageCache {
     struct Config {
         let countLimit: Int
         let memoryLimit: Int
-        
         static let defaultConfig = Config(countLimit: 100, memoryLimit: 1024*1024*100)
     }
-    
     init(config: Config = Config.defaultConfig) {
         self.config = config
     }
