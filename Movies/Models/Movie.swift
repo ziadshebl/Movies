@@ -18,9 +18,7 @@ struct MovieJSONObject: Codable, Hashable, Equatable {
 
 }
 
-
 class Movie: Object {
-    
     @objc dynamic var title = ""
     @objc dynamic var  year = 0
     var  cast = List<Cast>()
@@ -28,7 +26,6 @@ class Movie: Object {
     @objc dynamic var  rating = 0
     
 }
-
 
 class Cast: Object, Codable {
     @objc dynamic var castMember: String = ""

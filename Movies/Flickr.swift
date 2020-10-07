@@ -12,7 +12,6 @@ import Moya
 public enum Flickr {
     static private let apiKey = "69fb6e610d30f068e020c8319acfbae4"
     static private let apiSecret = "556acc3d22af9f0c"
-  
     case search(String)
 }
 
@@ -23,13 +22,15 @@ extension Flickr: TargetType {
   
   public var path: String {
     switch self {
-        case .search: return "/rest"
+        case .search:
+            return "/rest"
     }
   }
   
   public var method: Moya.Method {
     switch self {
-        case .search: return .get
+        case .search:
+            return .get
     }
   }
   
@@ -37,18 +38,17 @@ extension Flickr: TargetType {
     return Data()
   }
   
-  public var task: Task{
+  public var task: Task {
     switch self {
     case .search(let title):
      
-        
         return  .requestParameters(
           parameters: [
-            "method" : "flickr.photos.search",
+            "method": "flickr.photos.search",
             "api_key": Flickr.apiKey,
             "tags": title,
             "format": "json",
-            "nojsoncallback":1,
+            "nojsoncallback": 1,
             "per_page": 6,
             "page": 1
             
@@ -63,7 +63,7 @@ extension Flickr: TargetType {
     ]
   }
   
-  public var validationType: ValidationType{
+  public var validationType: ValidationType {
     return .successCodes
   }
   

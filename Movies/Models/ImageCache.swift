@@ -8,8 +8,7 @@
 import Foundation
 import UIKit
 
-final class ImageCache{
-    
+final class ImageCache {
     private let lock = NSLock()
     private let config: Config
     
@@ -20,10 +19,9 @@ final class ImageCache{
         static let defaultConfig = Config(countLimit: 100, memoryLimit: 1024*1024*100)
     }
     
-    init(config: Config = Config.defaultConfig){
+    init(config: Config = Config.defaultConfig) {
         self.config = config
     }
-    
     
     private lazy var imageCache: NSCache<AnyObject, AnyObject> = {
         let cache = NSCache<AnyObject, AnyObject>()
@@ -99,23 +97,24 @@ extension ImageCache: ImageCacheType {
         }
     }
     
-    
 }
 
 extension UIImage {
-    
     //A function responsible for decoding the image to decrease the time taken to render it
     func decodedImage() -> UIImage {
         guard let cgImage = cgImage else {return self}
         let size = CGSize(width: cgImage.width, height: cgImage.height)
         let colorSpace = CGColorSpaceCreateDeviceRGB()
-        let context = CGContext(data: nil, width: Int(size.width), height: Int(size.height), bitsPerComponent: 8, bytesPerRow: cgImage.bytesPerRow, space: colorSpace, bitmapInfo: CGImageAlphaInfo.noneSkipFirst.rawValue)
+        let context = CGContext(data: nil, width: Int(size.width),
+                    height: Int(size.height), bitsPerComponent: 8, bytesPerRow: cgImage.bytesPerRow,
+                    space: colorSpace, bitmapInfo: CGImageAlphaInfo.noneSkipFirst.rawValue)
         context?.draw(cgImage, in: CGRect(origin: .zero, size: size))
         
         guard let decodedImage = context?.makeImage() else {return self}
         
         return UIImage(cgImage: decodedImage)
     }
+    
 }
 
 

@@ -8,7 +8,6 @@
 import UIKit
 class MovieCell: UITableViewCell {
     
-    
     @IBOutlet weak var movieView: UIView!
     @IBOutlet weak var movieTitleLabel: UILabel!
     
@@ -18,7 +17,6 @@ class MovieCell: UITableViewCell {
     @IBOutlet weak var movieRatingStarImage3: UIImageView!
     @IBOutlet weak var movieRatingStarImage4: UIImageView!
     @IBOutlet weak var movieRatingStarImage5: UIImageView!
-    
     
     //A function responsible for filling the stars according to the rating
     //Input: Movie rating as Integer
@@ -38,9 +36,7 @@ class MovieCell: UITableViewCell {
         if rating > 4 {
             movieRatingStarImage5.image = UIImage(systemName: "star.fill")
         }
-        
     }
-    
     
     //A function to configure the cell
     //Input: The movie to be displayed in the cell as Movie
@@ -50,5 +46,4 @@ class MovieCell: UITableViewCell {
         adjustRatingStars(rating: movie.rating)
     }
 
-    
 }

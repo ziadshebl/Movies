@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 protocol ImageCacheType: class {
-    
     //A function to convert the image url into a UIImage
     //Input: The url of the image need to be rendered
     //Output: The image as UIImage
@@ -26,7 +25,6 @@ protocol ImageCacheType: class {
     //A function to remove all the images from the cache
     //Input: The url of the image
     func removeAllImages()
-    
     
     //Reading the image of a specific url
     //Input: The url of the image
