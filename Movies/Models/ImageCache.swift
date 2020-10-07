@@ -36,7 +36,6 @@ final class ImageCache {
     }()
 }
 
-
 extension ImageCache: ImageCacheType {
     
     //A function to convert the image url into a UIImage

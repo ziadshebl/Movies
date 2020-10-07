@@ -101,8 +101,9 @@ private extension AllMoviesViewController {
     
     //Binding the table view to the allMoviesList array
     func setupCellConfiguration() {
-        allMoviesList.bind(to: tableView.rx.items( cellIdentifier: Constants.MovieCellIdentifier, cellType: MovieCell.self)) {
-            _, movie, cell in cell.configureWithMovie(movie: movie)
+        allMoviesList.bind(to: tableView.rx.items( cellIdentifier: Constants.MovieCellIdentifier,
+            cellType: MovieCell.self))
+        { _, movie, cell in cell.configureWithMovie(movie: movie)
         }.disposed(by: disposeBag)
     }
     
@@ -117,7 +118,6 @@ private extension AllMoviesViewController {
         }).disposed(by: disposeBag)
     }
     
-    
     //Function responsible for dealing with the change of the search bar text by
     //checking if the current text is white blank or a string and then perform some
     //sql queries to put in the allMoviesList the top 5 rated movies for each year
@@ -125,7 +125,8 @@ private extension AllMoviesViewController {
         searchBar.rx.text.changed.subscribe { (_) in
             if self.searchBar.text != "" {
                 DispatchQueue.main.async {
-                    let moviesFiltered = self.realm.objects(Movie.self).filter("title contains '\(self.searchBar.text ?? "")'")
+                    let moviesFiltered = self.realm.objects(Movie.self)
+                        .filter("title contains '\(self.searchBar.text ?? "")'")
                         .sorted(byKeyPath: "rating", ascending:false)
                         .sorted(byKeyPath: "year", ascending: false)
                     
@@ -186,10 +187,11 @@ extension AllMoviesViewController {
     
     //Preparing the next destination by passing the movie to be displayed
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destinationVC = segue.destination as? MovieDetailsViewController{
+        if let destinationVC = segue.destination as? MovieDetailsViewController {
             let indexPath = tableView.indexPathForSelectedRow!
             destinationVC.movie = allMoviesList.value[indexPath.row]
         }
     }
+    
 }
 

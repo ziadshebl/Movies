@@ -23,7 +23,6 @@ class MovieImagesCollectionViewCell: UICollectionViewCell {
                     self.image.image = imageToDisplay
                 }.store(in: &subscriptions)
             }
-        
     }
 
 }

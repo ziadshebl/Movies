@@ -16,7 +16,6 @@ class MovieDetailsViewController: UIViewController {
     var movie: Movie?
     var photos: BehaviorRelay<[FlickrPhoto]> = BehaviorRelay(value: [])
     let disposeBag = DisposeBag()
-    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var movieTitleLabel: UILabel!
     @IBOutlet weak var movieReleaseYearLabel: UILabel!
@@ -91,7 +90,6 @@ class MovieDetailsViewController: UIViewController {
     }
 }
 
-
 //MARK:- A section to maniuplate the images from Flickr
 extension MovieDetailsViewController {
     
@@ -132,11 +130,8 @@ extension MovieDetailsViewController: UICollectionViewDelegateFlowLayout {
     //Binding the collection view to the photos array
     func setupCellConfiguration() {
         photos.bind(to: collectionView.rx.items(cellIdentifier: Constants.MovieImagesCollectionCellIdentifier,
-            cellType: MovieImagesCollectionViewCell.self))
-        { row, _, cell in
-            
+            cellType: MovieImagesCollectionViewCell.self)) { row, _, cell in
             cell.configureWithImages(photo: self.photos.value[row])
-            
         }.disposed(by: disposeBag)
     }
     

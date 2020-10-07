@@ -19,25 +19,21 @@ extension Flickr: TargetType {
   public var baseURL: URL {
     return URL(string: "https://api.flickr.com/services")!
   }
-  
   public var path: String {
     switch self {
         case .search:
             return "/rest"
     }
   }
-  
   public var method: Moya.Method {
     switch self {
         case .search:
             return .get
     }
   }
-  
   public var sampleData: Data {
     return Data()
   }
-  
   public var task: Task {
     switch self {
     case .search(let title):

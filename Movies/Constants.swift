@@ -12,5 +12,4 @@ struct Constants {
     static let MovieImagesCollectionCellIdentifier = "MovieImagesReusableIdentifier"
     static let MoviesJsonFile = "./movies"
     static let GoToDetailsSegueIdentifier = "goToMovieDetails"
-  
 }

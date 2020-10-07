@@ -10,7 +10,7 @@ import UIKit
 
 protocol ImageCacheType: class {
     //A function to convert the image url into a UIImage
-    //Input: The url of the image need to be rendered
+    //Input: The url of the imadge need to be rendered
     //Output: The image as UIImage
     func image(for url: URL) -> UIImage?
     
